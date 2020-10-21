@@ -215,28 +215,67 @@ var sources = []*ast.Source{
 #
 # https://gqlgen.com/getting-started/
 
+"""
+Todo type
+"""
 type Todo {
+  """
+  id of todo
+  """
   id: ID!
+  """
+  todo text
+  """
   text: String!
+  """
+  done or pending
+  """
   done: Boolean!
+  """
+  User this todo belongs to
+  """
   user: User!
 }
 
+"""
+User type
+"""
 type User {
+  """
+  unique id for user
+  """
   id: ID!
+  """
+  name of user
+  """
   name: String!
 }
 
 type Query {
+  """
+  List all todos
+  """
   todos: [Todo!]!
 }
 
+"""
+Input type for create todo
+"""
 input NewTodo {
+  """
+  Todo text
+  """
   text: String!
+  """
+  User name to assign it to
+  """
   userId: String!
 }
 
 type Mutation {
+  """
+  To create todo
+  """
   createTodo(input: NewTodo!): Todo!
 }`, BuiltIn: false},
 }

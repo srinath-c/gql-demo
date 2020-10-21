@@ -2,19 +2,30 @@
 
 package model
 
+// Input type for create todo
 type NewTodo struct {
-	Text   string `json:"text"`
+	// Todo text
+	Text string `json:"text"`
+	// User name to assign it to
 	UserID string `json:"userId"`
 }
 
+// Todo type
 type Todo struct {
-	ID   string `json:"id"`
+	// id of todo
+	ID string `json:"id"`
+	// todo text
 	Text string `json:"text"`
-	Done bool   `json:"done"`
-	User *User  `json:"user"`
+	// done or pending
+	Done bool `json:"done"`
+	// User this todo belongs to
+	User *User `json:"user"`
 }
 
+// User type
 type User struct {
-	ID   string `json:"id"`
+	// unique id for user
+	ID string `json:"id"`
+	// name of user
 	Name string `json:"name"`
 }
